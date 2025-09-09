@@ -11,7 +11,7 @@ const Login = () => {
   const handleform = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/login", { email, password });
+      const res = await axios.post("https://ecommerce-backend-s52t.onrender.com/login", { email, password });
 
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);

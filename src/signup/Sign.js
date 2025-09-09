@@ -9,7 +9,7 @@ const Sign = () => {
 
 const handleform =(e)=>{
   e.preventDefault();
-  axios.post('https://ecommerce-backend-s52t.onrender.com/signup',({name,email,password}))
+  axios.post('https://ecommerce-backendd-sgou.onrender.com/signup',({name,email,password}))
   .then(result=>{console.log(result)
 toast.success("Signup successful ✅")}
 )

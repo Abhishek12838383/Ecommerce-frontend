@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useEffect, useState ,useContext} from "react";
 import { Link } from 'react-router-dom';
 import { Selectedproduct,Productdata } from '../ContextAPI';
+import { toast } from "react-toastify";
 
 const Home = () => {
 
@@ -18,6 +19,7 @@ const Home = () => {
 
    const addtocart = (item) => {
   addToCart(item);
+  toast.success("Item added to cart 🛒");
 };
 
 
@@ -73,11 +75,12 @@ setAPI(result.data)
         <div className="flex gap-3 mt-4">
             <Link to='/product'>
           <button
-            className="flex-1 border border-gray-300 text-sm text-gray-700 py-1 rounded-xl hover:bg-gray-100 transition"
-            onClick={() => handleSelect(item)}
-          >
-            See More
-          </button>
+  onClick={() => handleSelect(item)}
+  className="text-blue-600 text-sm font-medium hover:underline transition"
+>
+  See details →
+</button>
+
           </Link>
           
           <button

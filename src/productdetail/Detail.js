@@ -1,9 +1,14 @@
 import { useContext } from "react";
 import { Selectedproduct } from '../ContextAPI';
+import { toast } from "react-toastify";
 
 const Detail = () => {
   const { selectedData } = useContext(Selectedproduct);
 
+    const handleAddToCart = (selectedData) => {
+    
+    toast.success("Item added to cart 🛒");
+  };
 
   return (
       <div className="max-w-6xl mx-auto p-6">
@@ -33,12 +38,10 @@ const Detail = () => {
 
           {/* Buttons */}
           <div className="flex space-x-4 mt-6">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-medium shadow-lg">
+            <button onClick={handleAddToCart} className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-medium shadow-lg">
               Add to Cart
             </button>
-            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium shadow-lg">
-              Buy Now
-            </button>
+            
           </div>
 
           {/* Extra Details */}
